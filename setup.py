@@ -1,6 +1,5 @@
 from setuptools import setup
 
-
 v_temp = {}
 with open("premise_gwp/version.py") as fp:
     exec(fp.read(), v_temp)

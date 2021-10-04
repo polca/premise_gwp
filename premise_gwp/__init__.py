@@ -7,9 +7,10 @@ from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
-from .version import version as __version__
 from bw2io import ExcelLCIAImporter
+
 from .biosphere import check_biosphere_database
+from .version import version as __version__
 
 
 def add_premise_gwp():
