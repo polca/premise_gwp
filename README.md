@@ -1,4 +1,4 @@
-# premise_gwp
+# `premise_gwp`
 
 Import the official IPCC's GWP100a characterization factors into Brightway2, with the addition of
 biogenic CO<sub>2</sub> uptake and release flows. This is needed when using
@@ -10,6 +10,8 @@ carbon footprint.
 In particular, it adds:
 * "Carbon dioxide, in air", with a CF of -1
 * "Carbon dioxide, non-fossil", with a CF of +1
+* "Carbon dioxide, non-fossil, resource correction", with a CF of +1
+
 
 The biogenic carbon balance in the rest of the ecoinvent database should be correct.
 Hence, using this method, instead of the regular IPCC 2013 GWP100a method, should not
@@ -30,4 +32,8 @@ add_premise_gwp()
 ## Installation
 
 `pip install premise_gwp`
+
+or
+
+`conda install -c romainsacchi premise_gwp`
 
