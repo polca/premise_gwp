@@ -1,0 +1,33 @@
+package:
+  name: premise_gwp
+  version: {{ environ['VERSION'] }}
+
+source:
+  path: ..
+
+build:
+  noarch: python
+  number: 0
+  script: python -m pip install --no-deps --ignore-installed .
+  script_env:
+    - VERSION
+    - CONDA_BLD_PATH
+
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - bw2io
+    - bw2data
+
+test:
+  imports:
+    - premise_gwp
+
+about:
+  home: https://github.com/romainsacchi/premise_gwp
+  license: BSD License
+  summary: "Adds IPCC's LCIA methods to Brightway2 project that include biogenic CO2 characterization factors,
+  to properly account for BECCS performance."
+license_family: BSD
