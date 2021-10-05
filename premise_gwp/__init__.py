@@ -65,4 +65,3 @@ def add_premise_gwp():
 
         # write method
         category.write_methods(overwrite=True, verbose=True)
-        
