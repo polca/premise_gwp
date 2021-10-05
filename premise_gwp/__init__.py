@@ -7,6 +7,7 @@ from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
+import bw2io
 from bw2io import ExcelLCIAImporter
 
 from .biosphere import check_biosphere_database
@@ -16,6 +17,7 @@ from .version import version as __version__
 def add_premise_gwp():
     check_biosphere_database()
 
+    # impact methods to create
     categories = {
         (
             ("IPCC 2013", "climate change", "GWP 20a, incl. bio CO2"),
@@ -48,6 +50,18 @@ def add_premise_gwp():
         category = ExcelLCIAImporter(
             filepath=DATA_DIR / c[-1], name=c[0], unit=c[1], description=c[2]
         )
+
+        # apply formatting strategies
         category.apply_strategies()
+
+        # if bw2io < 0.8.6
+        if bw2io.__version__ < (0, 8, 6):
+            if len(list(category.unlinked)) == 1:
+                if len(list(category.unlinked))[0]["name"] == "Carbon dioxide, in air":
+                    category.drop_unlinked()
+
+        # check that no flow is unlinked
         assert len(list(category.unlinked)) == 0
+
+        # write method
         category.write_methods(overwrite=True, verbose=True)
