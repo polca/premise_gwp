@@ -20,28 +20,40 @@ def add_premise_gwp():
     # impact methods to create
     categories = {
         (
-            ("IPCC 2013", "climate change", "GWP 20a, incl. bio CO2"),
+            ("IPCC 2013", "climate change", "GWP 20a, incl. H"),
             "kg CO2-Eq",
-            "IPCC 2013, with CFs for biogenic CO2 flows",
+            "IPCC 2013, with CFs for hydrogen",
             "lcia_gwp_20a.xlsx",
         ),
         (
-            ("IPCC 2013", "climate change", "GWP 100a, incl. bio CO2"),
+            ("IPCC 2013", "climate change", "GWP 100a, incl. H"),
             "kg CO2-Eq",
-            "IPCC 2013, with CFs for biogenic CO2 flows",
+            "IPCC 2013, with CFs for hydrogen",
             "lcia_gwp_100a.xlsx",
+        ),
+        (
+            ("IPCC 2013", "climate change", "GWP 20a, incl. H and bio CO2"),
+            "kg CO2-Eq",
+            "IPCC 2013, with CFs for hydrogen and biogenic CO2 flows",
+            "lcia_gwp_20a_w_bio.xlsx",
+        ),
+        (
+            ("IPCC 2013", "climate change", "GWP 100a, incl. H and bio CO2"),
+            "kg CO2-Eq",
+            "IPCC 2013, with CFs for hydrogen and biogenic CO2 flows",
+            "lcia_gwp_100a_w_bio.xlsx",
         ),
         (
             ("IPCC 2013", "climate change", "GTP 20a, incl. bio CO2"),
             "kg CO2-Eq",
             "IPCC 2013, with CFs for biogenic CO2 flows",
-            "lcia_gtp_20a.xlsx",
+            "lcia_gtp_20a_w_bio.xlsx",
         ),
         (
             ("IPCC 2013", "climate change", "GTP 100a, incl. bio CO2"),
             "kg CO2-Eq",
             "IPCC 2013, with CFs for biogenic CO2 flows",
-            "lcia_gtp_100a.xlsx",
+            "lcia_gtp_100a_w_bio.xlsx",
         ),
     }
 
