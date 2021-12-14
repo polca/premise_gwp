@@ -14,10 +14,10 @@ carbon footprint.
 This adds:
 
 * IPCC 2013, climate change, GWP 100a, with hydrogen
-  * "Hydrogen", with a CF of 10.9 and 4.3 for GWP20 and GWP100 respectively.
+  * "Hydrogen", with a CF of 14.2 and 5 for GWP20 and GWP100 respectively.
   
 * IPCC 2013, climate change, GWP 100a, with hydrogen and bio CO2
-  * "Hydrogen", with a CF of 10.9 and 4.3 for GWP20 and GWP100 respectively.
+  * "Hydrogen", with a CF of 14.2 and 5 for GWP20 and GWP100 respectively.
   * "Carbon dioxide, in air", with a CF of -1
   * "Carbon dioxide, non-fossil, resource correction", with a CF of -1
   * "Carbon dioxide, non-fossil", with a CF of +1
@@ -26,8 +26,8 @@ The biogenic carbon balance in the rest of the ecoinvent database should be corr
 Hence, using this method, instead of the regular IPCC 2013 GWP100a method, should not
 yield any difference, as long as BECCS are not present and solicited in the database.
 
-The characterization factors for the global warming impact of for hydrogen 
-are taken from Section 3.1.2 of [Barrett and Cassarino. 2021](https://www.creds.ac.uk/wp-content/uploads/CREDS-Heating-steam-methane-reformed-hydrogen.pdf).
+The characterization factors for the global warming impact GWP100a of for hydrogen 
+is taken from [Derwent et al, 2020](https://www.sciencedirect.com/science/article/pii/S0360319920302779).
 
 
 
