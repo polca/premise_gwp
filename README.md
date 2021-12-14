@@ -26,6 +26,9 @@ The biogenic carbon balance in the rest of the ecoinvent database should be corr
 Hence, using this method, instead of the regular IPCC 2013 GWP100a method, should not
 yield any difference, as long as BECCS are not present and solicited in the database.
 
+The characterization factors for the global warming impact of for hydrogen 
+are taken from Section 3.1.2 of [Barrett and Cassarino. 2021](https://www.creds.ac.uk/wp-content/uploads/CREDS-Heating-steam-methane-reformed-hydrogen.pdf).
+
 
 
 ## Usage
