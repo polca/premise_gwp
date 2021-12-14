@@ -72,15 +72,10 @@ jobs:
           pip install -r requirements.txt --upgrade pip
           pip install -e .
           pip install pytest
-          pip install pytest-cov
-          pip install coveralls
 
       - name: Run tests
         run: |
-          pytest --cov=premise_gwp
-          coveralls
-        env:
-          GITHUB_TOKEN: ${{ secrets.COVERALLS }}
+          pytest
 
   conda:
     name: (${{ matrix.python-version }}, ${{ matrix.os }})
