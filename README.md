@@ -2,7 +2,7 @@
 
 Import the official IPCC's GWP20a/GWP100a characterization factors into Brightway2, with the addition of
 hydrogen and biogenic CO<sub>2</sub> uptake and release flows. This is needed when using
-[premise](https://github.com/romainsacchi/premise) -generated LCI databases for two reasons:
+[premise](https://github.com/polca/premise) -generated LCI databases for two reasons:
 * in some scenarios, hydrogen-based supply chains (and associated losses) are significant
 * some scenarios rely on Bioenergy with carbon capture and storage (BECCS), Direct Air capture (DAC),
 and any other forms of storage using biomass or atmospheric resources.
