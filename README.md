@@ -14,10 +14,10 @@ carbon footprint.
 This adds:
 
 * IPCC 2013, climate change, GWP 100a, with hydrogen
-  * "Hydrogen", with a CF of 14.2 and 5 for GWP20 and GWP100 respectively.
+  * "Hydrogen", with a CF of 33 and 11 for GWP20 and GWP100 respectively.
   
 * IPCC 2013, climate change, GWP 100a, with hydrogen and bio CO2
-  * "Hydrogen", with a CF of 14.2 and 5 for GWP20 and GWP100 respectively.
+  * "Hydrogen", with a CF of 33 and 11 for GWP20 and GWP100 respectively.
   * "Carbon dioxide, in air", with a CF of -1
   * "Carbon dioxide, non-fossil, resource correction", with a CF of -1
   * "Carbon dioxide, non-fossil", with a CF of +1
@@ -27,7 +27,7 @@ Hence, using this method, instead of the regular IPCC 2013 GWP100a method, shoul
 yield any difference, as long as BECCS are not present and solicited in the database.
 
 The characterization factors for the global warming impact GWP100a of for hydrogen 
-is taken from [Derwent et al, 2020](https://www.sciencedirect.com/science/article/pii/S0360319920302779).
+is taken from [Warwick et al, 2022](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1067144/atmospheric-implications-of-increased-hydrogen-use.pdf).
 
 
 
