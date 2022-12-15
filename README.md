@@ -45,5 +45,5 @@ add_premise_gwp()
 
 or
 
-`conda install -c romainsacchi premise_gwp`
+`conda install -c conda-forge premise_gwp`
 
