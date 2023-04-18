@@ -29,7 +29,9 @@ yield any difference, as long as BECCS are not present and solicited in the data
 The characterization factors for the global warming impact GWP100a of for hydrogen 
 is taken from [Warwick et al, 2022](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1067144/atmospheric-implications-of-increased-hydrogen-use.pdf).
 
+## Limitation
 
+Only works with ``bw2io 0.8.7`` or earlier (until ecoinvent v.3.8).
 
 ## Usage
 
