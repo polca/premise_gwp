@@ -17,7 +17,7 @@ setup(
     license="BSD 3-clause",
     package_data={"premise_gwp": ["data/*.xlsx", "data/*.json"]},
     install_requires=[
-        "bw2io",
+        "bw2io<=0.8.7",
         "bw2data",
         "requests",
     ],
