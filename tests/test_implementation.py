@@ -15,7 +15,7 @@ def test_implementation():
     add_premise_gwp()
 
     # check that the new method exists
-    new_method = ("IPCC 2013", "climate change", "GWP 100a, incl. H and bio CO2")
+    new_method = ("IPCC 2021", "climate change", "GWP 100a, incl. H and bio CO2")
     assert new_method in bw2data.methods
 
     # check that "Carbon dioxide, in air" has now a CF of -1
