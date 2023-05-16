@@ -10,15 +10,19 @@ DATA_DIR = Path(__file__).resolve().parent / "data"
 import bw2io
 from bw2io import ExcelLCIAImporter
 
-from .biosphere import check_biosphere_database
+from .biosphere import check_biosphere_database, check_biosphere_version
 from .version import version as __version__
 
 
 def add_premise_gwp():
     check_biosphere_database()
+    bw2io_version = check_biosphere_version()
+
+
+
 
     # impact methods to create
-    categories = {
+    categories_bw2io087 = {
         (
             ("IPCC 2013", "climate change", "GWP 20a, incl. H"),
             "kg CO2-Eq",
@@ -43,19 +47,36 @@ def add_premise_gwp():
             "IPCC 2013, with CFs for hydrogen and biogenic CO2 flows",
             "lcia_gwp_100a_w_bio.xlsx",
         ),
+    }
+
+    categories_bw2io088 = {
         (
-            ("IPCC 2013", "climate change", "GTP 20a, incl. bio CO2"),
+            ("IPCC 2021", "climate change", "GWP 20a, incl. H"),
             "kg CO2-Eq",
-            "IPCC 2013, with CFs for biogenic CO2 flows",
-            "lcia_gtp_20a_w_bio.xlsx",
+            "IPCC 2021, with CFs for hydrogen",
+            "lcia_gwp2021_20a.xlsx",
         ),
         (
-            ("IPCC 2013", "climate change", "GTP 100a, incl. bio CO2"),
+            ("IPCC 2021", "climate change", "GWP 100a, incl. H"),
             "kg CO2-Eq",
-            "IPCC 2013, with CFs for biogenic CO2 flows",
-            "lcia_gtp_100a_w_bio.xlsx",
+            "IPCC 2021, with CFs for hydrogen",
+            "lcia_gwp2021_100a.xlsx",
+        ),
+        (
+            ("IPCC 2021", "climate change", "GWP 20a, incl. H and bio CO2"),
+            "kg CO2-Eq",
+            "IPCC 2021, with CFs for hydrogen and biogenic CO2 flows",
+            "lcia_gwp2021_20a_w_bio.xlsx",
+        ),
+        (
+            ("IPCC 2021", "climate change", "GWP 100a, incl. H and bio CO2"),
+            "kg CO2-Eq",
+            "IPCC 2021, with CFs for hydrogen and biogenic CO2 flows",
+            "lcia_gwp2021_100a_w_bio.xlsx",
         ),
     }
+
+    categories = categories_bw2io088 if bw2io_version >= (0, 8, 8) else categories_bw2io087
 
     for c in categories:
         print("Adding {}".format(c[0]))

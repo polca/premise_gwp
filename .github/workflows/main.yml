@@ -148,6 +148,7 @@ jobs:
         with:
           user: ${{ secrets.PYPI_USER }}
           password: ${{ secrets.PYPI_PASSWORD }}
+          skip_existing: true
 
       - name: Publish distribution 📦 to Test PyPI if Push
         uses: pypa/gh-action-pypi-publish@master
@@ -155,3 +156,4 @@ jobs:
           user: __token__
           password: ${{ secrets.TEST_PYPI_TOKEN }}
           repository_url: https://test.pypi.org/legacy/
+          skip_existing: true
