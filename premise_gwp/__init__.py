@@ -18,9 +18,6 @@ def add_premise_gwp():
     check_biosphere_database()
     bw2io_version = check_biosphere_version()
 
-
-
-
     # impact methods to create
     categories_bw2io087 = {
         (
@@ -76,7 +73,9 @@ def add_premise_gwp():
         ),
     }
 
-    categories = categories_bw2io088 if bw2io_version >= (0, 8, 8) else categories_bw2io087
+    categories = (
+        categories_bw2io088 if bw2io_version >= (0, 8, 8) else categories_bw2io087
+    )
 
     for c in categories:
         print("Adding {}".format(c[0]))

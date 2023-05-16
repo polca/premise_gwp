@@ -5,6 +5,7 @@ def check_biosphere_database():
     ERROR = "IPCC LCIA methods for ecoinvent biosphere flows only; install base ecoinvent data"
     assert "biosphere3" in bd.databases, ERROR
 
+
 def check_biosphere_version() -> tuple:
     # check for the presence of Beryllium II
     if "Beryllium II" not in [f["name"] for f in bd.Database("biosphere3")]:
