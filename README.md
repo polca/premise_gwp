@@ -13,17 +13,17 @@ carbon footprint.
 
 This adds:
 
-* IPCC 2013, climate change, GWP 100a, with hydrogen
+* IPCC 2013 and 2021, climate change, GWP 100a, with hydrogen
   * "Hydrogen", with a CF of 33 and 11 for GWP20 and GWP100 respectively.
   
-* IPCC 2013, climate change, GWP 100a, with hydrogen and bio CO2
+* IPCC 2013 and 2021, climate change, GWP 100a, with hydrogen and bio CO2
   * "Hydrogen", with a CF of 33 and 11 for GWP20 and GWP100 respectively.
   * "Carbon dioxide, in air", with a CF of -1
   * "Carbon dioxide, non-fossil, resource correction", with a CF of -1
   * "Carbon dioxide, non-fossil", with a CF of +1
 
 The biogenic carbon balance in the rest of the ecoinvent database should be correct.
-Hence, using this method, instead of the regular IPCC 2013 GWP100a method, should not
+Hence, using this method, instead of the regular IPCC GWP method, should not
 yield any difference, as long as BECCS are not present and solicited in the database.
 
 The characterization factors for the global warming impact GWP100a of for hydrogen 
@@ -31,7 +31,9 @@ is taken from [Warwick et al, 2022](https://assets.publishing.service.gov.uk/gov
 
 ## Limitation
 
-Only works with ``bw2io 0.8.7`` or earlier (until ecoinvent v.3.8).
+Now works with ``bw2io 0.8.7`` and ``bw2io 0.8.8``. 
+If ``bw2io 0.8.8`` is present, IPCC 2021 methods will be
+installed, otherwise IPCC 2013 methods will be installed.
 
 ## Usage
 
