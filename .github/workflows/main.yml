@@ -78,15 +78,15 @@ jobs:
           pytest
 
   conda:
-    name: (${{ matrix.python-version }}, ${{ matrix.os }})
-    runs-on: ${{ matrix.os }}
+    name: (${{ matrix.python-version }}, ubuntu-latest)
+    runs-on: ubuntu-latest
     needs: build
 
     strategy:
       fail-fast: false
       matrix:
-        os: ["ubuntu-latest"]
-        python-version: ["3.9"]
+        os: [ "ubuntu-latest" ]
+        python-version: [ "3.9", "3.10" ]
     steps:
       - uses: actions/checkout@v2
       - uses: conda-incubator/setup-miniconda@v2
@@ -96,21 +96,26 @@ jobs:
           allow-softlinks: true
           channel-priority: strict
           auto-update-conda: true
-          conda-build-version: 3.21.4
-          activate-environment: tests
+          activate-environment: test
 
       - name: Conda info
         shell: bash -l {0}
         run: conda info
 
+      - name: Git checkout
+        uses: actions/checkout@v1
+      - name: Branch name
+        run: echo running on branch ${GITHUB_REF##*/}
+
       - name: Publish distribution 📦 to Anaconda if Push
+        if: github.ref == 'refs/heads/master'
         shell: bash -l {0}
 
         run: |
-
           PKG_NAME=premise_gwp
           USER=romainsacchi
           conda install anaconda-client
+          conda install conda-build
           mkdir ~/conda-bld
           conda config --set anaconda_upload no
           export CONDA_BLD_PATH=~/conda-bld
