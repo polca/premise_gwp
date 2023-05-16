@@ -1,2 +1,2 @@
-bw2io<=0.8.7
+bw2io
 bw2data
