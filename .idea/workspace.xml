@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a24ab6b3-a198-4768-b249-1eb6a46321c4" name="Default Changelist" comment="Fix dependencies">
+    <list default="true" id="a24ab6b3-a198-4768-b249-1eb6a46321c4" name="Default Changelist" comment="Fix test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +87,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/romain/GitHub/premise_gwp/premise_gwp/data"
   }
 }]]></component>
@@ -185,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684230802079</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fix test">
+      <created>1684231218581</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684231218581</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -251,7 +259,8 @@
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Fix GithubAction" />
     <MESSAGE value="Fix dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix dependencies" />
+    <MESSAGE value="Fix test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix test" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/premise_gwp/version.py">
