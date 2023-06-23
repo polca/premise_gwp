@@ -93,7 +93,9 @@ def add_premise_gwp():
                     category.drop_unlinked()
 
         # check that no flow is unlinked
-        assert len(list(category.unlinked)) == 0
+        assert len(list(category.unlinked)) == 0, "Unlinked flows: {}".format(
+            list(category.unlinked)
+        )
 
         # write method
         category.write_methods(overwrite=True, verbose=True)
