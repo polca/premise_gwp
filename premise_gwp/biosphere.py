@@ -1,5 +1,6 @@
-import bw2data as bd
 from pathlib import Path
+
+import bw2data as bd
 import yaml
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
@@ -9,6 +10,7 @@ def load_ei310_mapping():
     with open(DATA_DIR / "mapping_ei310.yaml", "r", encoding="utf-8") as stream:
         mappings = yaml.safe_load(stream)
     return mappings
+
 
 def check_presence_biosphere_database(biosphere_name: str) -> str:
     """
