@@ -20,7 +20,8 @@ setup(
         "bw2io",
         "bw2data",
         "requests",
-        "pyyaml"
+        "pyyaml",
+        "numpy<2.0.0",
     ],
     url="https://github.com/romainsacchi/premise_gwp",
     long_description_content_type="text/markdown",
