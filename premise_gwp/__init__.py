@@ -7,10 +7,15 @@ from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
-import bw2io, bw2data
+import bw2data
+import bw2io
 from bw2io import ExcelLCIAImporter
 
-from .biosphere import check_biosphere_database, check_biosphere_version, load_ei310_mapping
+from .biosphere import (
+    check_biosphere_database,
+    check_biosphere_version,
+    load_ei310_mapping,
+)
 from .version import version as __version__
 
 
@@ -96,17 +101,15 @@ def add_premise_gwp():
                 for flow in method["exchanges"]:
                     flow["name"] = mapping.get(flow["name"], flow["name"])
 
-
-
         # apply formatting strategies
         category.apply_strategies()
-
 
         # check that no flow is unlinked
         if len(list(category.unlinked)) > 0:
             if bw2io_version == (0, 8, 12):
                 if all(
-                    flow["categories"] == ('air', 'lower stratosphere + upper troposphere')
+                    flow["categories"]
+                    == ("air", "lower stratosphere + upper troposphere")
                     for flow in category.unlinked
                 ):
                     category.drop_unlinked()
@@ -120,7 +123,10 @@ def add_premise_gwp():
 
         # write method
         category.name = c[0]
-        category.write_methods(overwrite=True, verbose=True,)
+        category.write_methods(
+            overwrite=True,
+            verbose=True,
+        )
         method = [m for m in bw2data.methods if m == c[0]][0]
         m = bw2data.Method(method)
         m.metadata["name"] = c[0]
