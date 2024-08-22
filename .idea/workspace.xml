@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a24ab6b3-a198-4768-b249-1eb6a46321c4" name="Default Changelist" comment="Fix test">
+    <list default="true" id="a24ab6b3-a198-4768-b249-1eb6a46321c4" name="Default Changelist" comment="ei310 compatibility">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "romainsacchi"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/polca/premise_gwp.git",
+    "accountId": "9568905b-633b-440a-893d-ed35be2ef0c2"
+  }
+}]]></component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -50,6 +62,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="240" />
     <option name="y" value="145" />
@@ -88,7 +103,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/romain/GitHub/premise_gwp/premise_gwp/data"
+    "last_opened_file_path": "/Users/romain/GitHub/premise_gwp/premise_gwp/data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -96,6 +117,14 @@
       <recent name="$PROJECT_DIR$/premise_gwp/data" />
       <recent name="C:\Users\sacchi_r\Documents\GitHub\premise_gwp" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
+        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -108,6 +137,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633359375168</updated>
+      <workItem from="1724319656586" duration="5202000" />
     </task>
     <task id="LOCAL-00001" summary="Update CF for hydrogen to 11 kg CO2-eq./kg.">
       <created>1649495949324</created>
@@ -193,7 +223,66 @@
       <option name="project" value="LOCAL" />
       <updated>1684231218581</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fix issue missing CF for `Carbon dioxide, non-fossil`">
+      <created>1687526359007</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687526359007</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Version bump">
+      <created>1687526376448</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687526376448</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Version bump">
+      <created>1687526707461</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687526707461</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add missing CFs for `Carbon dioxide, non-fossil`.">
+      <created>1687767354703</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687767354703</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Fix sign for &quot;Carbon dioxide, resource correction&quot; for GWP100 2021.">
+      <created>1687804919179</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1687804919179</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Correct values for biogenic methane.">
+      <option name="closed" value="true" />
+      <created>1690229640021</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1690229640021</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1690230020097</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1690230020097</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ei310 compatibility">
+      <option name="closed" value="true" />
+      <created>1724324859186</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1724324859186</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -238,6 +327,9 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -255,12 +347,17 @@
     <MESSAGE value="CFs for non-fossil methane has bene aligned on the values for fossil methane, as suggested in Muñoz and Schmidt, DOI: 10.1007/s11367-016-1091-z" />
     <MESSAGE value="Fix dependency of `bw2io` to 0.8.7&#10;because biosphere flows in ei39 (&gt;=`bw2io 0.8.8`) change." />
     <MESSAGE value="Add disclaimer in readme" />
-    <MESSAGE value="Version bump" />
-    <MESSAGE value="Update README.md" />
     <MESSAGE value="Fix GithubAction" />
     <MESSAGE value="Fix dependencies" />
     <MESSAGE value="Fix test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix test" />
+    <MESSAGE value="Fix issue missing CF for `Carbon dioxide, non-fossil`" />
+    <MESSAGE value="Version bump" />
+    <MESSAGE value="Add missing CFs for `Carbon dioxide, non-fossil`." />
+    <MESSAGE value="Fix sign for &quot;Carbon dioxide, resource correction&quot; for GWP100 2021." />
+    <MESSAGE value="Correct values for biogenic methane." />
+    <MESSAGE value="Update README.md" />
+    <MESSAGE value="ei310 compatibility" />
+    <option name="LAST_COMMIT_MESSAGE" value="ei310 compatibility" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/premise_gwp/version.py">
