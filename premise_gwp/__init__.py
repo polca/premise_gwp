@@ -89,7 +89,7 @@ def add_premise_gwp():
         )
 
         # if bw2io < 0.8.6
-        if bw2io.__version__ < (0, 8, 6):
+        if tuple(map(int, bw2io.__version__.split('.'))) < (0, 8, 6):
             if len(list(category.unlinked)) == 1:
                 if list(category.unlinked)[0]["name"] == "Carbon dioxide, in air":
                     category.drop_unlinked()
