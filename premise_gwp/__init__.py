@@ -3,8 +3,9 @@ __all__ = (
     "check_biosphere_database",
 )
 
-from packaging.version import parse
 from pathlib import Path
+
+from packaging.version import parse
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
