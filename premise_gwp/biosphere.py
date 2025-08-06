@@ -18,7 +18,7 @@ def check_presence_biosphere_database(biosphere_name: str) -> str:
     """
 
     if biosphere_name not in bd.databases:
-        print("RELICS requires the name of your biosphere database.")
+        print("`premise_gwp` requires the name of your biosphere database.")
         print(
             "Please enter the name of your biosphere database as it appears in your project."
         )

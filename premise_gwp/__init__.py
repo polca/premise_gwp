@@ -15,7 +15,7 @@ from .biosphere import (
     check_biosphere_version,
     load_ei310_mapping,
 )
-from .version import version as __version__
+from .version import __version__
 
 
 def add_premise_gwp():

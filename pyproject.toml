@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "premise_gwp"
+dynamic = ["version"]
+description = "Import IPCC's GWP100a method, with biogenic CO2 CFs, into Brightway2"
+readme = { file = "README.md", content-type = "text/markdown" }
+license = { text = "BSD-3-Clause" }
+authors = [
+  { name = "Romain Sacchi", email = "romain.sacchi@psi.ch" }
+]
+dependencies = [
+  "bw2io",
+  "bw2data",
+  "requests",
+  "pyyaml",
+  "numpy<2.0.0",
+]
+classifiers = [
+  "Intended Audience :: End Users/Desktop",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: BSD License",
+  "Operating System :: MacOS :: MacOS X",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.5",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/romainsacchi/premise_gwp"
+Repository = "https://github.com/romainsacchi/premise_gwp"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["premise_gwp"]
+
+[tool.setuptools.package-data]
+premise_gwp = ["data/**/*"]
+
+[tool.setuptools.dynamic]
+version = { attr = "premise_gwp.version.__version__" }
