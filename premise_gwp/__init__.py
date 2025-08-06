@@ -5,12 +5,9 @@ __all__ = (
 
 from pathlib import Path
 
-from packaging.version import parse
-
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
 import bw2data
-import bw2io
 from bw2io import ExcelLCIAImporter
 
 from .biosphere import (
