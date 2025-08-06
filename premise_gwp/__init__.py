@@ -3,6 +3,7 @@ __all__ = (
     "check_biosphere_database",
 )
 
+from packaging.version import parse
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
@@ -21,7 +22,8 @@ from .version import version as __version__
 
 def add_premise_gwp():
     biosphere_name = check_biosphere_database()
-    bw2io_version = check_biosphere_version(biosphere_name)
+    biosphere_version = check_biosphere_version(biosphere_name)
+    print(f"Using biosphere database: {biosphere_name} (version {biosphere_version})")
 
     # impact methods to create
     categories_bw2io087 = {
@@ -79,7 +81,7 @@ def add_premise_gwp():
     }
 
     categories = (
-        categories_bw2io088 if bw2io_version >= (0, 8, 8) else categories_bw2io087
+        categories_bw2io088 if biosphere_version >= (0, 8, 8) else categories_bw2io087
     )
 
     for c in categories:
@@ -89,12 +91,12 @@ def add_premise_gwp():
         )
 
         # if bw2io < 0.8.6
-        if bw2io.__version__ < (0, 8, 6):
+        if biosphere_version < (0, 8, 6):
             if len(list(category.unlinked)) == 1:
                 if list(category.unlinked)[0]["name"] == "Carbon dioxide, in air":
                     category.drop_unlinked()
 
-        if bw2io_version == (0, 8, 12):
+        if biosphere_version == (0, 8, 12):
             print("Converting to ei 3.10 biosphere names")
             mapping = load_ei310_mapping()
             for method in category.data:
@@ -106,7 +108,7 @@ def add_premise_gwp():
 
         # check that no flow is unlinked
         if len(list(category.unlinked)) > 0:
-            if bw2io_version == (0, 8, 12):
+            if biosphere_version == (0, 8, 12):
                 if all(
                     flow["categories"]
                     == ("air", "lower stratosphere + upper troposphere")

@@ -38,11 +38,14 @@ def check_biosphere_database():
 def check_biosphere_version(biosphere_name) -> tuple:
     # check for the presence of Beryllium II
     if "Beryllium II" not in [f["name"] for f in bd.Database(biosphere_name)]:
-        bw2io_version = (0, 8, 7)
+        if "Carbon dioxide, in air" not in [f["name"] for f in bd.Database(biosphere_name)]:
+            biosphere_version = (0, 8, 5)
+        else:
+            biosphere_version = (0, 8, 6)
     else:
         if "Methylchloride" in [f["name"] for f in bd.Database(biosphere_name)]:
-            bw2io_version = (0, 8, 12)
+            biosphere_version = (0, 8, 12)
         else:
-            bw2io_version = (0, 8, 8)
+            biosphere_version = (0, 8, 8)
 
-    return bw2io_version
+    return biosphere_version
