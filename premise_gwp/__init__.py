@@ -11,11 +11,48 @@ import bw2data
 from bw2io import ExcelLCIAImporter
 
 from .biosphere import (
+    LOWER_STRATOSPHERE_CATEGORY,
     check_biosphere_database,
     check_biosphere_version,
+    drop_unlinked_flows,
     load_ei310_mapping,
+    load_ei311_mapping,
 )
 from .version import __version__
+
+
+def use_biosphere_database(biosphere_name):
+    previous = bw2data.config.p.get("biosphere_database")
+    bw2data.config.p["biosphere_database"] = biosphere_name
+
+    def restore():
+        if previous is None:
+            try:
+                del bw2data.config.p["biosphere_database"]
+            except KeyError:
+                pass
+        else:
+            bw2data.config.p["biosphere_database"] = previous
+
+    return restore
+
+
+def get_flow_name_mapping(biosphere_version):
+    mapping = {}
+
+    if biosphere_version >= (0, 8, 12):
+        mapping.update(load_ei310_mapping())
+
+    if biosphere_version >= (3, 11):
+        mapping.update(load_ei311_mapping())
+
+    return mapping
+
+
+def apply_flow_name_mapping(category, mapping):
+    for method in category.data:
+        for flow in method["exchanges"]:
+            flow["name"] = mapping.get(flow["name"], flow["name"])
 
 
 def add_premise_gwp():
@@ -84,9 +121,13 @@ def add_premise_gwp():
 
     for c in categories:
         print("Adding {}".format(c[0]))
-        category = ExcelLCIAImporter(
-            filepath=DATA_DIR / c[-1], name=c[0], unit=c[1], description=c[2]
-        )
+        restore_biosphere_database = use_biosphere_database(biosphere_name)
+        try:
+            category = ExcelLCIAImporter(
+                filepath=DATA_DIR / c[-1], name=c[0], unit=c[1], description=c[2]
+            )
+        finally:
+            restore_biosphere_database()
 
         # if bw2io < 0.8.6
         if biosphere_version < (0, 8, 6):
@@ -94,32 +135,33 @@ def add_premise_gwp():
                 if list(category.unlinked)[0]["name"] == "Carbon dioxide, in air":
                     category.drop_unlinked()
 
-        if biosphere_version == (0, 8, 12):
-            print("Converting to ei 3.10 biosphere names")
-            mapping = load_ei310_mapping()
-            for method in category.data:
-                for flow in method["exchanges"]:
-                    flow["name"] = mapping.get(flow["name"], flow["name"])
+        mapping = get_flow_name_mapping(biosphere_version)
+        if mapping:
+            print("Converting to ecoinvent 3.10+ biosphere names")
+            apply_flow_name_mapping(category, mapping)
 
         # apply formatting strategies
         category.apply_strategies()
 
         # check that no flow is unlinked
-        if len(list(category.unlinked)) > 0:
-            if biosphere_version == (0, 8, 12):
-                if all(
-                    flow["categories"]
-                    == ("air", "lower stratosphere + upper troposphere")
-                    for flow in category.unlinked
-                ):
-                    category.drop_unlinked()
+        if biosphere_version >= (0, 8, 12):
+            dropped = drop_unlinked_flows(
+                category,
+                lambda flow: flow.get("categories") == LOWER_STRATOSPHERE_CATEGORY,
+            )
+            if dropped:
+                print(
+                    f"Dropped {dropped} unlinked lower stratosphere + upper "
+                    "troposphere flows"
+                )
 
-            print(f"{len(list(category.unlinked))} unlinked flows:")
-            for flow in category.unlinked:
+        unlinked = list(category.unlinked)
+        if unlinked:
+            print(f"{len(unlinked)} unlinked flows:")
+            for flow in unlinked:
                 print(flow)
 
-            if len(list(category.unlinked)) > 0:
-                raise ValueError("Unlinked flows")
+            raise ValueError("Unlinked flows")
 
         # write method
         category.name = c[0]

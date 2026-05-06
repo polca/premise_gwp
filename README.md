@@ -33,9 +33,10 @@ is taken from [Warwick et al, 2022](https://assets.publishing.service.gov.uk/gov
 
 ## Limitation
 
-Now works with ``bw2io 0.8.7`` and ``bw2io 0.8.8``. 
-If ``bw2io 0.8.8`` is present, IPCC 2021 methods will be
-installed, otherwise IPCC 2013 methods will be installed.
+Now works with ``bw2io 0.8.7`` and newer Brightway biosphere imports, including
+ecoinvent 3.10, 3.11, and 3.12 biosphere flow names. If an IPCC 2021-compatible
+biosphere is present, IPCC 2021 methods will be installed, otherwise IPCC 2013
+methods will be installed.
 
 ## Usage
 
@@ -52,4 +53,3 @@ add_premise_gwp()
 or
 
 `conda install -c romainsacchi premise_gwp`
-
