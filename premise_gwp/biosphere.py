@@ -45,7 +45,9 @@ def check_presence_biosphere_database(biosphere_name: str) -> str:
         return candidates[0]
 
     print("`premise_gwp` requires the name of your biosphere database.")
-    print("Please enter the name of your biosphere database as it appears in your project.")
+    print(
+        "Please enter the name of your biosphere database as it appears in your project."
+    )
     print(bd.databases)
     biosphere_name = input("Name of the biosphere database: ")
 
@@ -71,10 +73,7 @@ def check_biosphere_version(biosphere_name) -> tuple:
     if "3.10" in biosphere_name:
         return (3, 10)
 
-    if (
-        "Bromomethane" in flow_names
-        and "Methane, bromo-, Halon 1001" not in flow_names
-    ):
+    if "Bromomethane" in flow_names and "Methane, bromo-, Halon 1001" not in flow_names:
         return (3, 11)
 
     # check for the presence of Beryllium II

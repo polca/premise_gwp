@@ -15,10 +15,7 @@ def test_load_ei311_mapping():
         mapping["Methane, bromochlorodifluoro-, Halon 1211"]
         == "Bromochlorodifluoromethane"
     )
-    assert (
-        mapping["Methane, bromotrifluoro-, Halon 1301"]
-        == "Bromotrifluoromethane"
-    )
+    assert mapping["Methane, bromotrifluoro-, Halon 1301"] == "Bromotrifluoromethane"
 
 
 def test_drop_unlinked_flows_only_drops_matching_unlinked_flows():
