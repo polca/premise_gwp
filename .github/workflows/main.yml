@@ -100,8 +100,8 @@ jobs:
           conda config --set anaconda_upload no
           export CONDA_BLD_PATH=~/conda-bld
           export VERSION=$(date +%Y.%m.%d)
-          PACKAGE_PATH=$(conda build "conda/" --output --old-build-string)
-          conda build "conda/" --old-build-string
+          PACKAGE_PATH=$(conda-build "conda/" --output --old-build-string)
+          conda-build "conda/" --old-build-string
           anaconda -t ${{ secrets.ANACONDA_CLOUD }} upload -u $USER "$PACKAGE_PATH" --force
 
   Pypi:
