@@ -44,7 +44,10 @@ include-package-data = true
 include = ["premise_gwp"]
 
 [tool.setuptools.package-data]
-premise_gwp = ["data/**/*"]
+premise_gwp = [
+  "data/*.xlsx",
+  "data/*.yaml",
+]
 
 [tool.setuptools.dynamic]
 version = { attr = "premise_gwp.version.__version__" }

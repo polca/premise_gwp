@@ -8,24 +8,27 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
-  script_env:
-    - VERSION
-    - CONDA_BLD_PATH
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
+    - setuptools >=64
+    - wheel
   run:
+    - python
     - bw2io
     - bw2data
+    - requests
     - pyyaml
     - numpy<2.0.0
 
 test:
   imports:
     - premise_gwp
+  commands:
+    - python -c "from premise_gwp.biosphere import load_ei310_mapping, load_ei311_mapping; assert load_ei310_mapping(); assert load_ei311_mapping()"
 
 about:
   home: https://github.com/romainsacchi/premise_gwp

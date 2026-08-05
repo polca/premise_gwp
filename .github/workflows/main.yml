@@ -93,17 +93,16 @@ jobs:
         shell: bash -l {0}
 
         run: |
-          PKG_NAME=premise_gwp
           USER=romainsacchi
           conda install anaconda-client
           conda install conda-build
           mkdir ~/conda-bld
           conda config --set anaconda_upload no
           export CONDA_BLD_PATH=~/conda-bld
-          export VERSION=`date +%Y.%m.%d`
+          export VERSION=$(date +%Y.%m.%d)
+          PACKAGE_PATH=$(conda build "conda/" --output --old-build-string)
           conda build "conda/" --old-build-string
-          ls $CONDA_BLD_PATH/noarch/
-          anaconda -t ${{ secrets.ANACONDA_CLOUD }} upload -u $USER $CONDA_BLD_PATH/noarch/$PKG_NAME-$VERSION-py_0.tar.bz2 --force
+          anaconda -t ${{ secrets.ANACONDA_CLOUD }} upload -u $USER "$PACKAGE_PATH" --force
 
   Pypi:
     runs-on: ubuntu-latest
